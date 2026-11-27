@@ -104,7 +104,7 @@ cargo build --release --locked --manifest-path native/Cargo.toml
 HOMEMUSIC_API_URL=https://music.example.org ./native/run.sh
 ```
 
-`./native/run.sh --background` запускает клиент в фоне. Трей поддерживается окружениями с StatusNotifierItem. Linux-медиаклавиши и внешняя очередь используют D-Bus. Quickshell необязателен, а `HOMEMUSIC_THEME` позволяет указать собственный JSON с палитрой. [Импорт Spotify](native/SPOTIFY.md)
+`./native/run.sh --background` запускает клиент в фоне. Трей поддерживается окружениями с StatusNotifierItem. Linux-медиаклавиши и внешняя очередь используют D-Bus. Прокси для текстов и внешних метаданных можно указать в настройках клиента. Без него клиент использует стандартные переменные прокси окружения. Quickshell необязателен, а `HOMEMUSIC_THEME` позволяет указать собственный JSON с палитрой. [Импорт Spotify](native/SPOTIFY.md)
 
 Для ярлыка в меню установите `native/homemusic-native.desktop` в пользовательский каталог приложений, создайте ссылку на `native/run.sh` в `PATH` с именем `homemusic` и установите `native/assets/homemusic.svg` как значок `homemusic`. Обычный запуск из клона обходится без установки ярлыка.
 

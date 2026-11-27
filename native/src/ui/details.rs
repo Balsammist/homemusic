@@ -1129,17 +1129,15 @@ pub(super) fn parse_lrc(value: &str) -> Vec<LyricLine> {
 }
 
 pub(super) fn external_agent() -> ureq::Agent {
-    // Keep external requests on the configured proxy; localhost API requests use Api separately.
-    let proxy = std::env::var("HTTPS_PROXY")
-        .or_else(|_| std::env::var("https_proxy"))
-        .or_else(|_| std::env::var("ALL_PROXY"))
-        .unwrap_or_else(|_| "http://127.0.0.1:2080".into());
-    ureq::Agent::config_builder()
-        .proxy(Some(ureq::Proxy::new(&proxy).unwrap_or_else(|_| {
-            ureq::Proxy::new("http://127.0.0.1:2080").unwrap()
-        })))
-        .build()
-        .into()
+    let preference = crate::config::preference("proxy");
+    let mut config = ureq::Agent::config_builder();
+    if let Some(proxy) = preference
+        .as_str()
+        .and_then(|value| ureq::Proxy::new(value.trim()).ok())
+    {
+        config = config.proxy(Some(proxy));
+    }
+    config.build().into()
 }
 
 fn article_attempts(track: &Track) -> Vec<(&'static str, &str, &'static str)> {

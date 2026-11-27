@@ -1,0 +1,380 @@
+/* Native MD3 roles from Quickshell; geometry follows Material component tokens. */
+* { font-family: "Inter", "Noto Sans", sans-serif; font-size: 14px; }
+window, window.background, .app-root { background: @hm_surface; color: @hm_on_surface; }
+.md-icon { font-family: "Material Symbols Rounded"; font-size: 24px; font-weight: 400; }
+button { background-image: none; color: @hm_on_surface; background: transparent; border: none; box-shadow: none; padding: 8px 16px; min-height: 24px; border-radius: 20px; transition: background-color 160ms cubic-bezier(0.2,0,0,1), border-radius 160ms cubic-bezier(0.2,0,0,1); }
+button:hover { background: alpha(@hm_on_surface,0.08); }
+button:active { background: alpha(@hm_on_surface,0.12); border-radius: 12px; }
+button:focus, entry:focus { outline: none; }
+.keyboard-navigation button:focus, .keyboard-navigation entry:focus { outline: 2px solid @hm_primary; outline-offset: 2px; }
+button.primary { background: @hm_primary; color: @hm_on_primary; font-weight: 600; }
+button.primary:hover { background: mix(@hm_primary,@hm_on_primary,0.08); }
+button.primary:active { background: mix(@hm_primary,@hm_on_primary,0.12); }
+button.tonal, button.nav:checked { background: @hm_secondary_container; color: @hm_on_secondary_container; }
+button.flat { padding: 8px; min-width: 24px; min-height: 24px; }
+button.large-play { min-width: 40px; min-height: 32px; padding: 4px 12px; border-radius: 24px; }
+button.large-play:active { border-radius: 12px; }
+button.nav { padding: 10px 16px; min-height: 28px; border-radius: 24px; }
+button.nav:checked { font-weight: 600; }
+.topbar { padding: 8px 12px; }
+.topbar button { padding: 5px 12px; }
+.search entry { min-height: 24px; padding: 0; border: none; background: transparent; box-shadow: none; }
+.sidebar { padding: 16px 0; background: @hm_surface_container_low; border-radius: 24px; }
+.content { padding: 16px 0 0; background: @hm_surface_container_lowest; border-radius: 24px; }
+.now-panel { padding: 20px 0; background: @hm_surface_container_low; border-radius: 24px; }
+.section-title { font-size: 22px; line-height: 1.3; font-weight: 600; }
+.page-title { font-size: 36px; font-weight: 700; letter-spacing: -0.8px; }
+.page-header { padding: 8px 0 16px; }
+.muted,.overline { color: @hm_on_surface_variant; }
+.small { font-size: 12px; }
+.overline { font-size: 12px; font-weight: 600; letter-spacing: 0.8px; }
+.track-title { color: @hm_on_surface; font-size: 14px; font-weight: 600; }
+.now-title { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+.search { min-height: 28px; padding: 5px 16px; border: none; border-radius: 28px; background: @hm_surface_container_high; color: @hm_on_surface; box-shadow: none; }
+.search image { color: @hm_on_surface_variant; }
+.quick-card { background: @hm_secondary_container; border-radius: 16px; padding: 12px; min-height: 32px; }
+button.recommendation { padding: 10px; background: @hm_surface_container; border-radius: 16px; }
+button.recommendation:hover { background: @hm_surface_container_high; }
+button.album-tile { padding: 8px; border-radius: 16px; }
+button.library-item { padding: 8px 12px; border-radius: 12px; }
+listview { background: transparent; }
+listview row { min-height: 56px; padding: 0 8px; border-radius: 12px; transition: background-color 140ms ease-out; }
+listview row:hover { background: alpha(@hm_on_surface,0.08); }
+listview row:selected { background: @hm_secondary_container; color: @hm_on_secondary_container; }
+.compact listview row { min-height: 44px; }
+picture.cover { border-radius: 8px; background: @hm_surface_container; }
+.art-panel { border-radius: 16px; background: @hm_surface_container; min-height: 180px; }
+.art-symbol { font-size: 80px; color: @hm_primary; }
+.player { background: @hm_surface; padding: 4px 16px; }
+.status { color: @hm_on_surface_variant; font-size: 12px; }
+.error { color: @hm_error; }
+.liked { color: @hm_primary; }
+separator { background: @hm_outline_variant; min-height: 1px; margin: 6px 8px; }
+flowboxchild { padding: 0; }
+popover contents { background: @hm_surface_container; color: @hm_on_surface; border: none; border-radius: 16px; padding: 8px; box-shadow: 0 3px 12px alpha(black,0.25); }
+.material-menu contents { padding: 8px 0; border-radius: 16px; }
+.menu-heading { padding: 12px 16px; color: @hm_on_surface_variant; font-size: 12px; }
+button.menu-item { min-height: 32px; padding: 8px 16px; border-radius: 0; }
+button.menu-item:hover { background: alpha(@hm_on_surface,0.08); }
+button.menu-item:active { border-radius: 8px; }
+.source-row { padding: 16px; border-radius: 16px; background: @hm_surface_container_low; }
+switch { border-radius: 16px; min-width: 48px; min-height: 28px; background: @hm_surface_container_highest; border: 2px solid @hm_outline_variant; }
+switch:checked { background: @hm_primary; border-color: @hm_primary; }
+switch slider { background: @hm_outline_variant; border-radius: 50%; min-width: 16px; min-height: 16px; margin: 4px; box-shadow: none; border: none; }
+switch:checked slider { background: @hm_on_primary; min-width: 24px; min-height: 24px; margin: 0; }
+dropdown > button { background: @hm_surface_container_high; border-radius: 12px; }
+entry { background: @hm_surface_container_high; color: @hm_on_surface; border-radius: 12px; padding: 12px 16px; border: 1px solid @hm_outline_variant; box-shadow: none; }
+.empty-title { font-size: 24px; font-weight: 500; }
+tooltip { background: @hm_surface_container_highest; color: @hm_on_surface; border-radius: 8px; }
+.brand-mark { color: @hm_primary; }
+.expressive button.primary { border-radius: 16px; }
+.expressive button.primary:active { border-radius: 28px; }
+.dialog-bar { padding: 8px 16px; }
+button:checked, button.selected { color: @hm_primary; background: alpha(@hm_primary,0.1); }
+button.menu-item { min-height: 24px; padding: 6px 12px; }
+.menu-heading { padding: 8px 12px; }
+button.queue-track { padding: 8px; border-radius: 12px; }
+.motion-off * { transition: none; animation: none; }
+.motion-standard button { transition-duration: 160ms; }
+.motion-expressive button { transition-duration: 300ms; }
+.motion-expressive button:active { border-radius: 10px; }
+.player button.flat { min-width: 20px; padding: 6px; }
+.cover-frame { background: @hm_surface_container_high; color: @hm_on_surface_variant; border-radius: 8px; }
+.playing .track-title { color: @hm_primary; }
+.panel-tabs button { font-size: 12px; padding: 6px; min-height: 28px; border-radius: 12px; }
+.media-link:hover { color: @hm_primary; text-decoration: underline; }
+.artist-track { padding: 6px; }
+.cover-frame picture { background: transparent; }
+.cookie-cover { color: @hm_primary; }
+
+.topbar button:checked, .panel-tabs button:checked { background: @hm_secondary_container; color: @hm_on_secondary_container; }
+
+.player button.flat { padding: 4px; }
+.player button.large-play { min-height: 24px; padding: 3px 12px; }
+.resize-handle { background: transparent; }
+.resize-handle .resize-line { background: @hm_outline_variant; opacity: 0; transition: opacity 140ms ease-out; }
+.resize-handle:hover .resize-line, .resize-handle:focus .resize-line { opacity: 1; }
+button.panel-toggle.selected { background: @hm_secondary_container; color: @hm_primary; }
+.panel-tabs button { transition: background-color 180ms ease-out, color 180ms ease-out; }
+
+/* Full HD interaction polish: hover changes text, never the hit area. */
+button:hover, button.primary:hover, button.recommendation:hover, button.menu-item:hover, listview row:hover { background-color: transparent; color: @hm_primary; }
+.player { padding-top: 6px; padding-bottom: 6px; }
+.mix-label { font-size: 15px; }
+.queue-row.insert-before { box-shadow: inset 0 2px @hm_primary; }
+.queue-row.insert-after { box-shadow: inset 0 -2px @hm_primary; }
+.queue-row.source-start { border-top: 1px solid @hm_outline_variant; }
+
+.player button.flat, .player button.toggle { background-image: none; border-radius: 999px; min-width: 28px; }
+.player button:checked { color: @hm_primary; background-color: @hm_secondary_container; }
+
+/* Preserve existing filled surfaces during hover; only foreground responds. */
+button.primary:hover { background-color: @hm_primary; color: @hm_on_primary; }
+button.tonal:hover, button.quick-card:hover, button.nav:checked:hover { background-color: @hm_secondary_container; color: @hm_on_secondary_container; }
+button.recommendation:hover { background-color: @hm_surface_container; }
+
+.now-card { background-color: @hm_surface_container; border-radius: 16px; padding: 12px; }
+button.now-card:hover { background-color: @hm_surface_container; color: @hm_primary; }
+
+/* Card hover belongs to the complete hit area; popovers retain their origin. */
+listview row:hover, .context-open, button.recommendation:hover,
+button.album-tile:hover, button.queue-track:hover, .artist-track:hover {
+  background-color: alpha(@hm_on_surface,0.08);
+}
+
+.panel-tabs button, .search-tabs button { min-height: 28px; padding: 6px 12px; border-radius: 12px; }
+.panel-tabs button:checked, .search-tabs button:checked { background: @hm_secondary_container; color: @hm_primary; }
+.player button.flat.liked, .player button.flat.liked label { color: @hm_primary; }
+
+.artist-portrait { border-radius: 999px; }
+.artist-track button.media-link { padding: 0; min-height: 18px; }
+
+.best-result { background: @hm_surface_container; padding: 20px; min-height: 220px; border-radius: 16px; }
+.best-result .track-title { font-size: 28px; }
+
+/* Content owns its padding; scrollbars occupy the outer edge of their pane. */
+.sidebar > button { margin-left: 8px; margin-right: 8px; }
+.sidebar scrollbar, .content scrollbar, .now-panel scrollbar { margin: 0; padding: 0; }
+.media-card .card-play { opacity: 0; transition: opacity 140ms ease-out; border-radius: 999px; }
+.media-card:hover .card-play, .media-card:focus-within .card-play,
+.persistent-card-play .media-card .card-play { opacity: 1; }
+.media-link { outline: none; }
+.keyboard-navigation .media-link:focus { outline: 2px solid @hm_primary; outline-offset: 1px; }
+.queue-row { padding-left: 8px; padding-right: 8px; }
+
+.media-card .card-play { padding: 8px; min-width: 24px; min-height: 24px; }
+
+/* Connected selection and transport keep their allocation during shape changes. */
+button {
+  transition: background-color 120ms ease-out, color 120ms ease-out,
+    border-radius 120ms cubic-bezier(0.2, 0, 0, 1);
+}
+.motion-expressive button { transition-duration: 190ms; }
+button:disabled, switch:disabled, scale:disabled { opacity: 0.38; }
+.keyboard-navigation switch:focus,
+.keyboard-navigation scale:focus,
+.keyboard-navigation dropdown > button:focus {
+  outline: 2px solid @hm_primary;
+  outline-offset: 2px;
+}
+
+.player button.large-play {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 4px;
+  border-radius: 24px;
+}
+.player button.large-play:active {
+  background-color: mix(@hm_primary, @hm_on_primary, 0.12);
+  border-radius: 12px;
+}
+.player button.large-play.buffering {
+  background-color: @hm_secondary_container;
+  color: @hm_on_secondary_container;
+}
+.player button.flat { color: @hm_on_surface_variant; }
+.player button.flat:hover, .player button.flat.liked { color: @hm_primary; }
+.player button.flat:active { border-radius: 12px; }
+.player button:checked { color: @hm_on_secondary_container; }
+.panel-tabs button, .search-tabs button {
+  background-color: @hm_surface_container;
+  color: @hm_on_surface_variant;
+  border-radius: 8px;
+}
+.panel-tabs button:first-child, .search-tabs button:first-child {
+  border-radius: 20px 8px 8px 20px;
+}
+.panel-tabs button:last-child, .search-tabs button:last-child {
+  border-radius: 8px 20px 20px 8px;
+}
+.panel-tabs button:checked, .search-tabs button:checked {
+  color: @hm_on_secondary_container;
+  border-radius: 20px;
+}
+.panel-tabs button:active, .search-tabs button:active {
+  background-color: mix(@hm_secondary_container, @hm_on_secondary_container, 0.12);
+  border-radius: 12px;
+}
+switch { border-color: @hm_outline; }
+switch slider { background-color: @hm_outline; }
+switch:checked { border-color: @hm_primary; }
+switch:checked slider { background-color: @hm_on_primary; }
+
+.motion-off * { transition: none; animation: none; }
+
+
+.player button.flat label, .panel-tabs button label, .search-tabs button label,
+.material-menu button label { color: inherit; }
+.player button.flat.selected { background-color: @hm_secondary_container; color: @hm_on_secondary_container; }
+.material-menu .menu-heading { color: @hm_on_surface_variant; }
+.settings-page searchentry {
+  background: @hm_surface_container_high;
+  border: 1px solid @hm_outline_variant;
+  border-radius: 24px;
+  padding: 8px 14px;
+  min-height: 24px;
+}
+.settings-page searchentry:focus-within { border-color: @hm_primary; }
+.settings-navigation flowboxchild { padding: 0; }
+.settings-navigation .settings-tab {
+  padding: 8px 12px;
+  min-height: 24px;
+  border-radius: 20px;
+  background-color: @hm_surface_container;
+  color: @hm_on_surface_variant;
+}
+.settings-navigation .settings-tab label { color: inherit; }
+.settings-navigation .settings-tab:checked {
+  background-color: @hm_secondary_container;
+  color: @hm_on_secondary_container;
+}
+.settings-navigation .settings-tab:not(:checked):hover:not(:active):not(:disabled) {
+  background-color: mix(@hm_surface_container, @hm_on_surface_variant, 0.08);
+}
+.settings-navigation .settings-tab:checked:hover:not(:active):not(:disabled) {
+  background-color: mix(@hm_secondary_container, @hm_on_secondary_container, 0.08);
+}
+.settings-row dropdown > button:hover:not(:disabled) {
+  background-color: mix(@hm_surface_container_high, @hm_on_surface, 0.08);
+  color: @hm_on_surface;
+}
+.settings-row button.tonal:hover:not(:disabled) {
+  background-color: mix(@hm_secondary_container, @hm_on_secondary_container, 0.08);
+}
+.settings-row button.primary:hover:not(:disabled) {
+  background-color: mix(@hm_primary, @hm_on_primary, 0.08);
+}
+.settings-row switch:hover:not(:disabled) slider {
+  box-shadow: 0 0 0 5px alpha(@hm_on_surface, 0.08);
+}
+.settings-row switch:checked:hover:not(:disabled) slider {
+  box-shadow: 0 0 0 5px alpha(@hm_on_primary, 0.08);
+}
+.settings-navigation .settings-tab:focus-visible { outline: 2px solid @hm_primary; }
+.settings-group-title { font-weight: 600; color: @hm_primary; padding-left: 4px; }
+.settings-card { background-color: @hm_surface_container_low; border-radius: 18px; }
+.settings-row { min-height: 42px; padding: 6px 14px; }
+.settings-row + .settings-row { border-top: 1px solid @hm_outline_variant; }
+.settings-row-title { font-weight: 600; }
+.settings-row spinbutton entry { min-width: 38px; padding: 6px 8px; }
+.settings-results > box + box { margin-top: 12px; }
+button.primary label, button.tonal label, dropdown > button label { color: inherit; }
+dropdown > button { color: @hm_on_surface; }
+
+/* Transform only the glyph, leaving the 48px Play target in place. */
+.motion-standard .player button.large-play .md-icon,
+.motion-expressive .player button.large-play .md-icon {
+  transition: transform 120ms cubic-bezier(0.2, 0, 0, 1);
+}
+.motion-expressive .player button.large-play .md-icon {
+  transition-timing-function: cubic-bezier(0.2, 1.08, 0.32, 1);
+}
+.player button.large-play:active .md-icon {
+  transform: scale(0.92);
+}
+
+.player-clock { font-feature-settings: "tnum"; }
+.keyboard-navigation .audio-control:focus-within {
+  outline: 2px solid @hm_primary;
+  outline-offset: -1px;
+  border-radius: 12px;
+}
+.settings-row scale trough { background: @hm_surface_container_highest; }
+.settings-row scale highlight { background: @hm_primary; }
+.settings-row scale slider {
+  background: @hm_primary;
+  border: 2px solid @hm_on_primary;
+  box-shadow: none;
+}
+
+.topbar button.library-toggle { color: @hm_on_surface_variant; background: transparent; }
+.topbar button.library-toggle:not(:checked):hover { background: alpha(@hm_on_surface, 0.08); }
+.topbar button.library-toggle:checked { background: @hm_primary; color: @hm_on_primary; }
+.topbar button.library-toggle:checked:hover { background: mix(@hm_primary, @hm_on_primary, 0.08); }
+.topbar button.library-toggle:checked:active { background: mix(@hm_primary, @hm_on_primary, 0.12); }
+.topbar button.library-toggle .md-icon { color: inherit; }
+.sidebar > button.nav { padding-left: 16px; }
+
+.now-actions button.now-action {
+  min-height: 48px;
+  padding: 0 12px;
+  color: @hm_on_surface;
+  border-radius: 12px;
+}
+.now-actions {
+  padding: 4px;
+  background-color: @hm_surface_container_high;
+  border-radius: 20px;
+}
+.now-actions button.now-action:hover { color: @hm_primary; }
+.now-actions button.now-action:active { background-color: @hm_secondary_container; color: @hm_on_secondary_container; }
+.now-source { margin: 0 8px; }
+.player button#volume-mute { min-width: 40px; min-height: 40px; }
+
+.playlist-heading { background-color: @hm_surface_container; padding: 18px; border-radius: 24px; }
+.playlist-heading picture, .album-heading picture { border-radius: 12px; }
+.album-heading { border-bottom: 1px solid @hm_outline_variant; }
+
+.rounded-artwork picture.cover, .rounded-artwork .cover-frame,
+.rounded-artwork .art-panel, .artwork-preview.rounded-artwork { border-radius: 18px; }
+.square-artwork picture.cover, .square-artwork .cover-frame,
+.square-artwork .art-panel, .artwork-preview.square-artwork { border-radius: 0; }
+.palette-preview { padding: 8px; border-radius: 16px; background-color: @hm_surface_container; }
+.palette-preview label, .artwork-preview { padding: 8px; border-radius: 12px; }
+.palette-sample-primary { color: @hm_on_primary; background-color: @hm_primary; }
+.palette-sample-tonal { color: @hm_on_secondary_container; background-color: @hm_secondary_container; }
+.palette-sample-surface, .artwork-preview { color: @hm_on_surface; background-color: @hm_surface_container_highest; }
+
+.karaoke-line, .plain-lyrics { font-size: 22px; padding: 6px 4px; }
+.lyrics-small .karaoke-line, .lyrics-small .plain-lyrics { font-size: 17px; }
+.lyrics-large .karaoke-line, .lyrics-large .plain-lyrics { font-size: 28px; }
+.karaoke-line { font-weight: 700; transition: color 140ms ease-out, opacity 140ms ease-out; }
+.karaoke-future { opacity: 0.58; }
+.karaoke-past { opacity: 0.75; }
+.karaoke-active { color: @hm_primary; }
+.lyrics-focus .karaoke-past, .lyrics-focus .karaoke-future { opacity: 0.44; }
+
+.player-preview { border-radius: 16px; }
+.player-tonal .player { background-color: @hm_secondary_container; color: @hm_on_secondary_container; }
+.player-tonal .player .muted, .player-tonal .player button.flat { color: @hm_on_secondary_container; }
+.player-tonal .player button.flat:hover, .player-tonal .player button.flat:checked,
+.player-tonal .player button.flat.selected { background-color: alpha(@hm_on_secondary_container, 0.08); color: @hm_on_secondary_container; }
+.player-elevated .player { background-color: @hm_surface_container_high; }
+.player-play-rect .player button.large-play { border-radius: 12px; }
+.player-play-rect .player button.large-play:active { border-radius: 8px; }
+.player-play-tonal .player button.large-play {
+  color: @hm_on_primary_container;
+  background-color: @hm_primary_container;
+}
+.player-play-tonal .player button.large-play:hover {
+  background-color: mix(@hm_primary_container, @hm_on_primary_container, 0.08);
+}
+.player-play-tonal .player button.large-play:active {
+  background-color: mix(@hm_primary_container, @hm_on_primary_container, 0.12);
+}
+.player-play-tonal .player button.large-play.buffering {
+  color: @hm_on_secondary_container;
+  background-color: @hm_secondary_container;
+}
+.rounded-artwork .playlist-heading picture, .rounded-artwork .album-heading picture { border-radius: 18px; }
+.square-artwork .playlist-heading picture, .square-artwork .album-heading picture { border-radius: 0; }
+
+.lyrics-neutral .karaoke-active { color: @hm_on_surface; }
+.lyrics-subtitle { font-size: 16px; color: @hm_on_surface_variant; }
+.lyrics-subtitle-small .lyrics-subtitle { font-size: 13px; }
+.lyrics-subtitle-large .lyrics-subtitle { font-size: 20px; }
+
+
+button.now-lyric-preview { padding: 12px 14px; border-radius: 12px; background: @hm_secondary_container; color: @hm_on_secondary_container; }
+button.now-lyric-preview:hover { background: mix(@hm_secondary_container, @hm_on_secondary_container, 0.08); }
+
+.motion-sample-panel { min-height: 44px; padding: 10px 14px; border-radius: 16px; background: @hm_secondary_container; color: @hm_on_secondary_container; }
+.motion-sample-panel .md-icon { color: inherit; }
+.settings-preview-row { padding-top: 10px; padding-bottom: 12px; }
+.media-card > button.album-tile { background: transparent; }
+.media-card:hover > button.album-tile, .media-card:focus-within > button.album-tile,
+.media-card > button.album-tile.context-open { background: alpha(@hm_on_surface, 0.08); }
+.media-card > button.album-tile:active { background: alpha(@hm_on_surface, 0.12); }
+
+.cover-viewer-toolbar { padding: 0 8px 6px; }
+.artwork-link:focus-visible { outline: 2px solid @hm_primary; outline-offset: -3px; }

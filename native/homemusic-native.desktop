@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=HomeMusic
+Comment=Native music player for your personal library
+Comment[ru]=Нативный плеер вашей музыкальной библиотеки
+Exec=homemusic
+TryExec=homemusic
+Icon=homemusic
+Terminal=false
+Categories=AudioVideo;Audio;Player;Music;
+Keywords=music;audio;HomeMusic;музыка;плеер;
+StartupWMClass=io.github.balsammist.HomeMusic
+StartupNotify=true
